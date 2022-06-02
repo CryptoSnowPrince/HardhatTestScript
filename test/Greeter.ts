@@ -36,8 +36,9 @@ before(async function () {
   // console.log(provider)
   console.log("accountList")
   // console.log(accountList)
-  // for (let i = 0; i < accountList.length; i++)
-  //     console.log("## ", accountList[i].address);
+  console.log(accountList.length)
+  for (let i = 0; i < accountList.length; i++)
+      console.log("## ", accountList[i].address);
 })
 
 describe("Greeter Test", function () {
