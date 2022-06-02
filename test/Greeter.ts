@@ -2,7 +2,7 @@ import { expect } from "chai";
 import hre, { ethers } from "hardhat";
 
 import { Greeter } from "../typechain"
-// import greeterAbi from "../artifacts/contracts/Greeter.sol/Greeter.json"
+import greeterAbi from "../artifacts/contracts/Greeter.sol/Greeter.json"
 
 import { SignerWithAddress } from "@nomiclabs/hardhat-ethers/signers"
 import { Contract } from "ethers";
@@ -22,6 +22,7 @@ before(async function () {
 
   accountList = await ethers.getSigners();
   const provider = ethers.provider
+  console.log(greeterAbi.abi);
   //0x9Ac64Cc6e4415144C455BD8E4837Fea55603e5c3
   //0x10ED43C718714eb63d5aA57B78B54704E256024E
   //0x28B7f6F38AbeBBBAAC23D94aD0F4D1ab8329651A
