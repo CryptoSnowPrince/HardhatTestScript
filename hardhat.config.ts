@@ -36,7 +36,13 @@ const config: HardhatUserConfig = {
       },
     ]
   },
+  defaultNetwork: "hardhat",
   networks: {
+    localhost: {
+      url: "http://127.0.0.1:8545"
+    },
+    hardhat: {
+    },
     ropsten: {
       url: process.env.ROPSTEN_URL || "",
       accounts:
@@ -57,8 +63,8 @@ const config: HardhatUserConfig = {
       accounts:
         process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
     },
-    tethermoon: {
-      url: process.env.TETHERMOON_URL || "",
+    roburna: {
+      url: process.env.ROBURNA_URL || "",
       accounts:
         process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
     },

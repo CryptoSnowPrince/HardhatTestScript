@@ -4,7 +4,7 @@ import { ethers } from "hardhat";
 describe("Greeter", function () {
   it("Should return the new greeting once it's changed", async function () {
     const Greeter = await ethers.getContractFactory("Greeter");
-    const greeter = await Greeter.deploy("Hello, world!");
+    const greeter = await Greeter.deploy("Hello, world!", 0);
     await greeter.deployed();
 
     expect(await greeter.greet()).to.equal("Hello, world!");
@@ -15,5 +15,7 @@ describe("Greeter", function () {
     await setGreetingTx.wait();
 
     expect(await greeter.greet()).to.equal("Hola, mundo!");
+
+    const setValTx = await greeter.setVal(10)
   });
 });
